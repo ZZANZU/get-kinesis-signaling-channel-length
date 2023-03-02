@@ -1,7 +1,10 @@
 import boto3
 
 
-def get_channel_length():
+def get_channel_count():
+    """
+    Kinesis Video(WebRTC)의 Signaling Channel 수 조회
+    """
     client = boto3.client('kinesisvideo')
     response = client.list_signaling_channels(
         MaxResults=1000
@@ -23,4 +26,4 @@ def get_channel_length():
 
 
 if __name__ == '__main__':
-    print(get_channel_length())
+    print(get_channel_count())
